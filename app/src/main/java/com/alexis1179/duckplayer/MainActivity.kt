@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.alexis1179.duckplayer.ui.theme.DuckPlayerTheme
+import com.alexis1179.duckplayer.view.components.CustomTopBar
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +20,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             DuckPlayerTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                Scaffold(modifier = Modifier.fillMaxSize(),
+                    topBar = {CustomTopBar()}) { innerPadding ->
                     Greeting(
                         name = "Android",
                         modifier = Modifier.padding(innerPadding)
@@ -38,7 +40,9 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     )
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true,
+    device = "spec:width=411dp,height=891dp"
+)
 @Composable
 fun GreetingPreview() {
     DuckPlayerTheme {
