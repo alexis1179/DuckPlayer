@@ -1,4 +1,4 @@
-package com.alexis1179.duckplayer.view.utils
+package com.alexis1179.duckplayer.utils
 enum class Routes{
     HOME
 }
