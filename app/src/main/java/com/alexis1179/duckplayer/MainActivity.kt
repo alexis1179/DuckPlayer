@@ -21,7 +21,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.core.content.ContextCompat
+import androidx.media3.exoplayer.ExoPlayer
 import androidx.navigation.compose.rememberNavController
+import com.alexis1179.duckplayer.service.PlayerController
 import com.alexis1179.duckplayer.ui.theme.DuckPlayerTheme
 import com.alexis1179.duckplayer.utils.NavAppHost
 import com.alexis1179.duckplayer.view.components.CustomTopBar
@@ -61,6 +63,10 @@ class MainActivity : ComponentActivity() {
                     }
                 }
             }
+
+            val playerController = PlayerController.getInstance()
+            val exoPlayer = ExoPlayer.Builder(this).build()
+            playerController.setPlayer(exoPlayer)
         }
     }
 }
